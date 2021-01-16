@@ -23,6 +23,10 @@ export function handler(event, context, callback) {
 
   // Perform the API call.
   const get = () => {
+
+    pass({data: 'Hello world!'});
+    return;
+
     axios.get(URL)
     .then((response) =>
       {

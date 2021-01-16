@@ -11,13 +11,15 @@ const app = express()
 app.use(
   '/.netlify/functions',
   proxy({
-    target: 'http://localhost:9000',
-    pathRewrite: {
+  target: 'http://127.0.0.1:9000/',
+
+      pathRewrite: {
         '^/\.netlify/functions':''
-    }
+    },
+
   })
 )
 
 app.use(bundler.middleware())
 
-app.listen(Number(process.env.PORT || 1234))
+app.listen(Number(process.env.PORT || 3000))
